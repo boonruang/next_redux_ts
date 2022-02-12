@@ -3,6 +3,7 @@ import App from 'next/app'
 import { AppProps } from 'next/app'
 import Header from 'next/head'
 import { Provider } from 'react-redux'
+import { wrapper } from '../redux'
 
 interface Props {
   store: any
@@ -17,4 +18,4 @@ function CMApp({ Component, pageProps }: AppProps) {
   )
 }
 
-export default CMApp
+export default wrapper.withRedux(CMApp)

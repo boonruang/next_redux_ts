@@ -1,4 +1,4 @@
-import { LOGIN } from "../types"
+import { CLEAR, LOGIN } from "../types"
 
 // rxreducer
 const initialState = {
@@ -11,6 +11,8 @@ export default (state = initialState, { type, payload }) => {
 
   case LOGIN:
     return { ...state, token: payload.token, user: { username: payload.user.username} }
+  case CLEAR:
+      return initialState    
 
   default:
     return state
